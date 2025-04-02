@@ -1,0 +1,367 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/css/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LT Hoop';
+    src: url('/css/LT Hoop/LTHoop-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: rgb(107,72,255); */
+    background-image: url(../g5.png);
+    background-color: #4630c2ff;
+    /* background: linear-gradient(153deg, rgba(107,72,255,1) 0%, rgba(255,138,92,1) 35%, rgba(85,209,159,1) 100%); */
+    color: #25282b;
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body.hideScroll {
+    overflow: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'LT Hoop', serif;
+
+}
+
+#container {
+    /* width: 80%;
+    max-width: 1200px; */
+    width: 100vw;
+    height: 100%;
+
+    margin: 40px auto;
+    padding: 0 20rem;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#intro {
+    margin-right: 64px;
+    height: 100%;
+    background-color: #fff;
+    padding: 3rem;
+    border-radius: 8px;
+}
+
+main {
+    font-size: 18px;
+    margin: 32px auto;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 32px;
+}
+
+
+
+#logo {
+    width: 300px;
+    height: 115px;
+}
+
+button {
+    font-family: 'Kufam', cursive;
+
+    border: none;
+    color: #5A4FBE;
+    background: none;
+    cursor: pointer;
+    outline: none;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    transition: 500ms;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+.button {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: white;
+    background: #5A4FBE;
+
+    width: 140px;
+    height: 40px;
+
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 400ms;
+}
+
+.button:hover {
+    background-color: #99CB2C;
+    text-decoration: none;
+}
+
+a {
+    font-weight: 600;
+    color: #5A4FBE;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+
+    color: #755;
+}
+
+footer a {
+    opacity: 0.7;
+}
+
+.project {
+    display: flex;
+    margin-bottom: 32px;
+    background-color: #fff;
+    opacity: 0.65;
+    box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.project img {
+    width: 80px;
+    height: 80px;
+    margin-right: 32px;
+}
+
+.project h3 {
+    margin: 0;
+}
+
+.project p {
+    margin: 8px 0;
+    color: #766;
+}
+
+.project .description {
+    margin: 16px 0;
+}
+
+
+
+/*MODAL Style*/
+#modal {
+    background: linear-gradient(306deg, rgba(107,72,255,1) 0%, rgba(255,138,92,1) 35%, rgba(85,209,159,1) 100%);
+    position: absolute;
+    top: 0;
+
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+
+    transition: 500ms;
+}
+
+#modal.addScroll {
+    overflow: auto;
+}
+
+#modal .content {
+    margin: 32px 0;
+    color: white;
+}
+
+#modal .content h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#modal form {
+    width: 80%;
+    max-width: 800px;
+
+    margin: 0 auto;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content form div:nth-child(3),
+.content form div:nth-child(4),
+.content form div:nth-child(5) {
+    grid-column: span 2;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(39, 143, 70, 0.5);
+    outline: none;
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+form label {
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 0.8px;
+
+}
+
+form a {
+    background-color: #ffffff44;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 40px;
+
+    align-self: end;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 500ms;
+}
+
+form a:hover {
+    background: white;
+    color: #5A4FBE;
+
+    text-decoration: none;
+}
+
+form button {
+    background: white;
+
+    width: 150px;
+    height: 40px;
+
+    border-radius: 6px;
+    cursor: pointer;
+
+    margin-top: 32px;
+
+    grid-column: 2;
+    justify-self: end;
+}
+
+form button:hover {
+    background-color: #ffffff44;
+    color: white;
+
+    text-decoration: none;
+}
+
+#modal.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/** projects.html **/
+#page-projects #container {
+    display: block;
+}
+
+#page-projects header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+#page-projects nav {
+    display: flex;
+    align-items: center;
+}
+
+#page-projects nav li {
+    list-style-type: none;
+
+    margin-right: 16px;
+}
+
+
+#page-projects nav li:last-child {
+    margin: 0;
+}
+
+#page-projects section#title {
+    text-align: center;
+}
+
+#page-projects section#title p {
+    opacity: 0.7;
+    margin: 0;
+}
+
+#page-projects section#title h1 {
+    margin:0;
+
+    font-size: 28px;
+
+}
+
+#page-projects section#projects {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+#page-projects section#projects .project {
+    margin: 0;
+}
+
+section#title,
+section#projects,
+footer {
+    margin-top: 64px;
+}

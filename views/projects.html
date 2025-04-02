@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FeCEAP 2024 - Projetos</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/6886/6886075.png?semt=ais_hybrid"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body id="page-projects">
+    <div id="container">
+        <header>
+            <a href="/">
+                <img id="logo" src="FeCEAP-logoAlef2.svg" alt="FeCEAP-logo">
+
+            </a>
+            <nav>
+                <li><a href="/">Início</a></li>
+                <li><a href="#" class="button" onclick="onOff()">Novo Projeto</a></li>
+            </nav>
+        </header>
+
+        <section id="title">
+            <p>em exibição</p>
+            <h1>Projetos</h1>
+        </section>
+
+        <main>
+            <section id="projects">
+                {% for projeto in projetos %}
+                <div class="project">
+                    <img src="{{ projeto.img }}" alt="">
+
+                    <div class="content">
+                        <h3>{{ projeto.titulo }}</h3>
+                        <p>{{projeto.categoria}}</p>
+
+                        <div class="description">
+                            {{projeto.descricao}}
+                        </div>
+                        <a href="{{projeto.url}}">Ir para o projeto</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+        </main>
+
+        <footer>
+            Com ❤️ <a href="https://ceappedreira.org.br/" target="_blank">CEAP</a>
+        </footer>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal" class="hide">
+        <div class="content">
+            <h1>Novo Projeto</h1>
+
+            <form action="/" method="post">
+
+                <div class="input-wrapper">
+                    <label for="title">Título do Projeto</label>
+                    <input type="text" name="title">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="category">Categoria</label>
+                    <input type="text" name="category">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="image">Link da Imagem</label>
+                    <input type="url" name="image">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="description">Descriçao do Projeto</label>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="url">Link do Projeto</label>
+                    <input type="url" name="url">
+                </div>
+
+                <a href="#" onclick="onOff()">Voltar</a>
+                <button class="button">Salvar</button>
+
+
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>

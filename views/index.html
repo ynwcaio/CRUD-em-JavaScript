@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeCEAP 2024</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/6886/6886075.png?semt=ais_hybrid" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <section id="intro">
+
+            <header>
+                <a href="/">
+                    <img id="logo" src="FeCEAP-logoAlef2.svg" alt="FeCEAP-logo">
+
+                </a>
+            </header>
+
+            <main>
+                <p>
+                    Esse ano, nossa tradicional Feira de Ciências não será da forma tradicional...
+                </p>
+    
+                <p>
+                    Vamos prestigiar os projetos de nossos alunos nas áreas de 
+                    <strong>Ciências, Engenharia, Administração e Criatividade </strong>
+                    de maneira digital, acompanhando por esse site especialmente produzido para tal!
+                </p>
+    
+                <p>
+                    Comece clicando em ver projetos para ver os trabalhos cadastrados e contribua
+                    adicionando o seu projeto
+                </p>
+            </main>
+
+            <section id="buttons">
+                <button onclick="onOff()">+ Adicionar Projeto</button>
+                <a class="button" href="/projetos">Ver Projetos</a>
+            </section>
+
+            <footer>
+                Com ❤️ <a href="https://ceappedreira.org.br/" target="_blank">CEAP</a>
+            </footer>
+
+        </section>
+
+        <section id="last-projects">
+            <!-- <h1>{{ projeto.descricao }}</h1> -->
+            {% for projeto in projetos %}
+            <div class="project">
+                <img
+                src="{{ projeto.img }}" 
+                alt="">
+            
+                <div class="content">
+                    <h3>{{ projeto.titulo }}</h3>
+                    <p>{{projeto.categoria}}</p>
+
+                    <div class="description">
+                        {{projeto.descricao}}
+                    </div>
+                    <a href="{{projeto.url}}">Ir para o projeto</a>
+                </div>
+            </div> 
+            {% endfor %}
+                       
+        </section>
+
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal" class="hide">
+        <div class="content">
+            <h1>Novo Projeto</h1>
+
+            <form action="/" method="post">
+                
+                <div class="input-wrapper">
+                    <label for="title">Título do Projeto</label>
+                    <input type="text" name="title">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="category">Categoria</label>
+                    <input type="text" name="category">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="image">Link da Imagem</label>
+                    <input type="url" name="image">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="description">Descriçao do Projeto</label>
+                    <textarea name="description" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="url">Link do Projeto</label>
+                    <input type="url" name="url">
+                </div>
+
+                <a href="#" onclick="onOff()">Voltar</a>
+                <button class="button">Salvar</button>
+
+
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
